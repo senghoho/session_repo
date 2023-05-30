@@ -5,7 +5,9 @@
 <h1>Hello! _mainpage</h1>
 <img src="{% static 'images/logo.png' %}" style="width:500px;">
 <br>
-<a href="{% url 'new' %}">글 쓰기</a>
+{% if user.is_authenticated %}
+<a href="{% url 'main:new' %}">글 쓰기</a>
+{% endif %}
 
 <h1>글 목록</h1>
 
@@ -15,7 +17,7 @@
         <h3>{{blog.title}}</h3>
         {{blog.writer}}<br>
         {{blog.summary}}
-        <a href="{%url 'detail' blog.id %}">...자세히</a>
+        <a href="{%url 'main:detail' blog.id %}">...자세히</a>
         <br>
     </div>
     {% endfor %}

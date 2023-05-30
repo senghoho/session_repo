@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>내이름은뭘까용.</h1>
+
+    <h3>{{ user.profile.nickname }}님 안녕하세요.</h3>
+    <h3>당신의 학과는 {{ user.profile.department }} 입니다.</h3>
+
+
+{% endblock %}
